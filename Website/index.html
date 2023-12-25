@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
         referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -30,7 +31,8 @@
                     <div>
                         <p class="text-4xl">Empowering Your <strong>Online Experience</strong></p>
                         <p class="text-4xl">Where <span style="color: #57007B"><strong>Security</strong></span> Meets
-                            <span style="color: #7F59B0"><strong>Simplicity</strong></span>.</p>
+                            <span style="color: #7F59B0"><strong>Simplicity</strong></span>.
+                        </p>
                     </div>
                     <p class="w-4/6 mt-8 text-md">A digital gateway providing curated content and interactive
                         experiences
@@ -39,10 +41,20 @@
                 </div>
                 <a href="#" class="hero-button">Let's get started!</a>
             </div>
-            <img src="./assets/images/heroimg.svg" alt="Hero Image" />
+            <img src="./assets/images/../images/surf.svg" alt="Hero Image" />
         </section>
         <section class="services !w-screen">
             <h2 class="text-center text-3xl"><strong>Services we offer</strong></h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+
+                    </div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
             <div class="card-container">
                 <div class="card">
                     <img url="images/service1.png" alt="Service 1">
@@ -61,6 +73,11 @@
                 </div>
             </div>
         </section>
+        <section class="!w-screen !h-screen">
+            <p class="text-4xl">
+                Secure the Surf: Your Trusted Gateway to Verified Websites
+            </p>
+        </section>
         <section class="about-us">
             <h2>About Rookie Techies</h2>
             <p>A digital gateway providing curated content and interactive experiences for users on the World Wide Web.
@@ -72,6 +89,17 @@
         <p>&copy; 2023 Rookie Techies. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            },
+        });
+    </script>
 </body>
 
 </html>
