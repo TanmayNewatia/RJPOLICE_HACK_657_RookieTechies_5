@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rookie Techies</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <header>
-        <div class="logo">Rookie Techies</div>
-        <nav>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
+    <header class="flex justify-between items-center">
+        <div class="flex items-center logo">
+            <img src="./assets/images/logo.svg" alt="RookieTechies">
+            <p class="ml-2">RookieTechies</p>
+        </div>
+        <ul class="flex items-center nav justify-between">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li class="contact"><a href="#">Contact Us</a></li>
+        </ul>
     </header>
     <main>
-        <section class="hero">
-            <h1>Empowering Your Online Experience</h1>
-            <p>Where Security Meets Simplicity.</p>
-            <a href="#" class="button">Let's get started!</a>
+        <section class="hero flex items-center">
+            <div class="hero-div">
+                <div>
+                    <div>
+                        <p class="text-4xl">Empowering Your <strong>Online Experience</strong></p>
+                        <p class="text-4xl">Where <span style="color: #57007B"><strong>Security</strong></span> Meets
+                            <span style="color: #7F59B0"><strong>Simplicity</strong></span>.</p>
+                    </div>
+                    <p class="w-4/6 mt-8 text-md">A digital gateway providing curated content and interactive
+                        experiences
+                        for users on the World Wide
+                        Web.</p>
+                </div>
+                <a href="#" class="hero-button">Let's get started!</a>
+            </div>
+            <img src="./assets/images/heroimg.svg" alt="Hero Image" />
         </section>
-        <section class="services">
-            <h2>Our Services</h2>
+        <section class="services !w-screen">
+            <h2 class="text-center text-3xl"><strong>Services we offer</strong></h2>
             <div class="card-container">
                 <div class="card">
                     <img url="images/service1.png" alt="Service 1">
@@ -46,7 +63,8 @@
         </section>
         <section class="about-us">
             <h2>About Rookie Techies</h2>
-            <p>A digital gateway providing curated content and interactive experiences for users on the World Wide Web.</p>
+            <p>A digital gateway providing curated content and interactive experiences for users on the World Wide Web.
+            </p>
             <a href="#" class="button">Read More</a>
         </section>
     </main>
@@ -55,4 +73,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>
