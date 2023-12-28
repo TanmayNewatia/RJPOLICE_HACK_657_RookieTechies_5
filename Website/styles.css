@@ -29,7 +29,19 @@ header {
   background: linear-gradient(225deg, #A68AC8 0%, #57007B 100%);
   padding: 5px 10px;
   border-radius: 5px;
-  color: white;
+  color: white !important;
+}
+
+.contact a {
+  color: white !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul a {
+  color: black !important;
 }
 
 ::-webkit-scrollbar {
@@ -42,10 +54,26 @@ header {
   border-radius: 5px;
 }
 
-.hero, .surf {
+.hero {
   height: 100vh;
   width: 100vw;
+  display: flex;
   justify-content: center;
+  align-self: center;
+}
+
+.surf {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.about,
+.recent {
+  height: 100vh;
+  width: 100vw;
 }
 
 .hero-div {
@@ -54,6 +82,15 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.surf-div {
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .hero-button {
@@ -69,32 +106,116 @@ header {
 
 .services {
   background: #DFD3EB;
-  height: 100vh;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /*swiper */
 
-.swiper {
+.services .mySwiper {
   width: 80%;
-  height: 50%;
+  height: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide {
-  text-align: center;
+.services swiper-slide {
   font-size: 18px;
   background: #DFD3EB;
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.services swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  margin: 0 10px !important;
+  width: 30% !important;
+  height: 75% !important;
+  padding: 10px;
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-img-top {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.card-body {
+  height: 80%;
+}
+
+/* Recent */
+.recent-checked .mySwiper {
+  width: 80%;
+  height: 85%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.recent-checked swiper-slide {
+  font-size: 18px;
+  /* background: #DFD3EB; */
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.recent-checked swiper-slide img {
+  width: 100% !important;
+  height: 50% !important;
   object-fit: cover;
+}
+
+.recent-checked .card-text {
+  width: 200px;
+}
+
+/* About */
+.about-checked .mySwiper {
+  width: 80%;
+  height: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-checked swiper-slide {
+  font-size: 18px;
+  /* background: #DFD3EB; */
+  display: flex !important;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.about-checked swiper-slide img {
+  width: 100% !important;
+  height: 50% !important;
+  object-fit: cover;
+}
+
+.about-checked .card-text {
+  width: 200px;
 }
