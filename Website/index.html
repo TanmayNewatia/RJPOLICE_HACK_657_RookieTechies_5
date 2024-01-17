@@ -28,7 +28,7 @@
             <li><a href="#">About Us</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Blog</a></li>
-            <li class="contact"><a href="#">Contact Us</a></li>
+            <li class="contact" onclick="funcn()"><a href="#">Contact Us</a></li>
         </ul>
     </header>
     <main>
@@ -320,15 +320,42 @@
                 </swiper-container>
             </div>
         </section>
-        <section class="about-us">
+        <!-- <section class="about-us">
             <h2>About Rookie Techies</h2>
             <p>A digital gateway providing curated content and interactive experiences for users on the World Wide Web.
             </p>
             <a href="#" class="button">Read More</a>
-        </section>
+        </section> -->
+        <h2 id="Value"></h2>
     </main>
     <footer>
-        <p>&copy; 2023 Rookie Techies. All rights reserved.</p>
+        <div class="flex w-screen !h-2/6 justify-evenly">
+            <div class="w-3/12">
+                <div>
+                    <img src="./assets/images/logo.svg" alt="RookieTechies" />
+                    <p class="ml-2 mb-0">RookieTechies</p>
+                </div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <img src="./assets/images/google.svg" alt="Google" />
+            </div>
+            <ul>
+                <li class="font-bold">Links</li>
+                <li class="font-muted">About</li>
+                <li class="font-muted">Services</li>
+                <li class="font-muted">Case Studies</li>
+                <li class="font-muted">Blog</li>
+            </ul>
+            <p>
+                Contact Us: 9887651230
+            </p>
+            <div class="!h-full flex items-end text-xl">
+                <i class="fa-brands fa-facebook p-2"></i>
+                <i class="fa-brands fa-instagram p-2"></i>
+                <i class="fa-brands fa-twitter p-2"></i>
+                <i class="fa-brands fa-linkedin-in p-2"></i>
+            </div>
+        </div>
+        <p class="text-center">&copy; 2023 Rookie Techies. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
@@ -351,6 +378,17 @@
                 dynamicBullets: true,
             },
         });
+    </script>
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+        const supabaseUrl = 'https://tqdfozrcrvgikmndntpj.supabase.co';
+        const supabase = createClient(supabaseUrl, supabaseKey)
+        console.log('Supabase Instance: ', supabase.supabaseUrl)
+    </script>
+    <script>
+        const funcn = () => {
+            document.getElementById("Value").innerHTML = supabase.supabaseUrl
+        }
     </script>
 </body>
 
