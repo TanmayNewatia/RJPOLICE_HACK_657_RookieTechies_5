@@ -7,11 +7,49 @@ import { IoMdMail } from "react-icons/io";
 import { FaBuildingUser } from "react-icons/fa6";
 import { useState } from "react";
 import StarRatings from 'react-star-ratings';
+import { supabase } from "../supabase";
+import emailjs from "@emailjs/browser";
 
 export default function Feedback() {
     const [rating, setRating] = useState(2);
     const changeRating = (newRating) => {
         setRating(newRating);
+    }
+
+    const handleSubmit = async () => {
+        const name = document.getElementById("name").value;
+        const occupation = document.getElementById("occupation").value;
+        const service = document.getElementById("service").value;
+        const email = document.getElementById("email").value;
+        const company = document.getElementById("company").value;
+        const rating = document.getElementById("rating");
+        const comments = document.getElementById("comments").value;
+        const { data, error } = await supabase
+            .from('FeedbackForm')
+            .insert([
+                { name: name, occupation: occupation, service: service, email: email, company: company, rating: rating, comments: comments },
+            ])
+            .then(() => {
+                emailjs.send(process.env.NEXT_PUBLIC_EMAIL_SERVICE, process.env.NEXT_PUBLIC_EMAIL_TEMPLATE, {
+                    name: name,
+                    occupation: occupation,
+                    service: service,
+                    email: email,
+                    company: company,
+                    rating: rating,
+                    comments: comments
+                }, process.env.NEXT_PUBLIC_EMAIL_KEY)
+                    .then(function (response) {
+                        
+                    }, function (error) {
+                        console.log('FAILED...', error);
+                    });
+                document.getElementById("myForm").reset();
+            })
+            .then(error => {
+                console.log(error);
+                document.getElementById("myForm").reset();
+            })
     }
     return (
         <div className="feedback-container flex !h-11/12">
@@ -20,14 +58,14 @@ export default function Feedback() {
                     <Image src={feedback} alt="Feedback Image" width="40%" />
                     <h3 className="text-2xl font-bold">Shape the Future: Your Voice Our Evolution</h3>
                 </div>
-                <form className="flex flex-col justify-center items-start w-6/12 gap-5 p-5 rounded-2xl">
+                <form id="myForm" className="flex flex-col justify-center items-start w-6/12 gap-5 p-5 rounded-2xl">
                     <div className="">
                         <label className="font-bold text-sm">
                             Name
                         </label>
                         <div className="inputfield flex text-md items-center bg-white p-2 rounded-md gap-2">
                             <MdAccountCircle />
-                            <input type="text" placeholder="Enter Your Name" />
+                            <input id="name" type="text" placeholder="Enter Your Name" required />
                         </div>
                     </div>
                     <div className="second-layer flex">
@@ -37,7 +75,7 @@ export default function Feedback() {
                             </label>
                             <div className="inputfield flex text-md items-center bg-white p-2 rounded-md gap-2">
                                 <MdOutlineSensorOccupied />
-                                <input type="text" placeholder="Enter Your Name" />
+                                <input id="occupation" type="text" placeholder="Enter Your Occupation" required />
                             </div>
                         </div>
                         <div className="mx-1">
@@ -46,7 +84,7 @@ export default function Feedback() {
                             </label>
                             <div className="inputfield flex text-md items-center bg-white p-2 rounded-md gap-2">
                                 <FaBuilding />
-                                <input type="text" placeholder="Enter Your Name" />
+                                <input id="service" type="text" placeholder="Enter Your Service" required />
                             </div>
                         </div>
                     </div>
@@ -57,7 +95,7 @@ export default function Feedback() {
                             </label>
                             <div className="inputfield flex text-md items-center bg-white p-2 rounded-md gap-2">
                                 <IoMdMail />
-                                <input type="text" placeholder="Enter Your Name" />
+                                <input id="email" type="email" placeholder="Enter Your Email" required />
                             </div>
                         </div>
                         <div className="mx-1">
@@ -66,7 +104,7 @@ export default function Feedback() {
                             </label>
                             <div className="inputfield flex text-md items-center bg-white p-2 rounded-md gap-2">
                                 <FaBuildingUser />
-                                <input type="text" placeholder="Enter Your Name" required />
+                                <input id="company" type="company" placeholder="Enter Your company" required />
                             </div>
                         </div>
                     </div>
@@ -82,8 +120,8 @@ export default function Feedback() {
                             starDimension="30px"
                         />
                     </div>
-                    <textarea className="w-full h-32 rounded-2xl" placeholder="Add your comments"></textarea>
-                    <input type="submit" style={{  }} />
+                    <textarea id="comments" className="w-full h-32 rounded-2xl" placeholder="Add your comments"></textarea>
+                    <button type="button" onClick={() => { handleSubmit() }} >Submit</button>
                 </form>
             </div>
         </div>

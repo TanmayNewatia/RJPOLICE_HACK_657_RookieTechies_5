@@ -25,6 +25,7 @@ import ReactDOM from 'react-dom';
 import { IoIosCloseCircle } from "react-icons/io";
 import { FaQuestion } from "react-icons/fa";
 import Report from './components/report';
+import { supabase } from './supabase';
 
 const customStyles = {
   content: {
@@ -90,7 +91,7 @@ export default function Home() {
   return (
     <div>
       <header className="flex justify-between items-center">
-        <div class="flex justify-between max-[400px]:w-full">
+        <div className="flex justify-between max-[400px]:w-full">
           <div className="flex items-center logo">
             <Image src={logo} alt="RookieTechies" width={50} />
             <p className="ml-2 mb-0">RookieTechies</p>
@@ -102,7 +103,7 @@ export default function Home() {
           <li><a href="#">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#">Blog</a></li>
-          <li className="contact" onClick=""><a href="#">Contact Us</a></li>
+          <li className="contact"><a href="#">Contact Us</a></li>
         </ul>
       </header>
       <main>
@@ -231,7 +232,7 @@ export default function Home() {
               </div>
               <p className="w-4/6 mt-8 text-md">Welcome to the Feedback Hub! Your insights are invaluable in sculpting an even better experience for you. Help us fine-tune our services by sharing your thoughts – together, we build excellence</p>
             </div>
-            <a href className="hero-button" onClick={() => { openModal(); }}>Give Feedback</a>
+            <p className="hero-button cursor-pointer my-2" onClick={() => { openModal(); }}>Give Feedback</p>
             <Modal
               isOpen={modalIsOpen}
               onRequestClose={closeModal}
