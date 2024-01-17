@@ -18,6 +18,7 @@ import { FaArrowRight, FaBars } from "react-icons/fa";
 import google from "./images/google.svg";
 import surf from "./images/surf.svg";
 import services from "./images/services.svg";
+import shape from "./images/shape.svg";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -38,7 +39,7 @@ export default function Home() {
           <button className="menubtn text-lg" onClick={() => { openMenu() }}><FaBars /></button>
         </div>
 
-        <ul className={(!open) ? "flex items-center nav justify-between open" : "flex items-center nav justify-between"}>
+        <ul className={(open) ? "flex items-center nav justify-between open" : "flex items-center nav justify-between"}>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Blog</a></li>
@@ -64,9 +65,9 @@ export default function Home() {
           </div>
           <Image src={hero} alt="Hero Image" width={"50%"} />
         </section>
-        <section className="services !w-screen">
+        <section className="services !w-screen my-10">
           <h2 className="text-center text-3xl"><strong>Services we offer</strong></h2>
-          <main className="flex mx-auto justify-evenly items-center w-10/12 h-full">
+          <main className="flex flex-wrap gap-5 mx-auto justify-evenly items-center w-10/12 h-full !my-10">
             <div className="card">
               <Image src={services} className="card-img-top"
                 alt="Advertisement Analysis" width={50} />
@@ -117,7 +118,7 @@ export default function Home() {
           <div>
 
           </div>
-          <div className="recent-checked flex flex-col justify-center items-center">
+          <div className="recent-checked flex flex-col justify-center items-center my-10">
             <p className="text-3xl text-center">Recently</p>
             <p className="text-3xl text-center"><strong>Verified Sites</strong></p>
             <Carousel
@@ -149,15 +150,21 @@ export default function Home() {
             </Carousel>
           </div>
         </section>
-        {/* <!-- < section className="about-us" >
-          <h2>About Rookie Techies</h2>
-          <p>A digital gateway providing curated content and interactive experiences for users on the World Wide Web.
-          </p>
-          <a href="#" className="button">Read More</a>
-        </section > --> */}
-        <h2 id="Value"></h2>
+        <section className="shape flex items-center justify-evenly gap-5 my-10">
+          <div className="shape-div">
+            <div>
+              <div>
+                <p className="text-4xl"><strong>Shape the Future: Your Voice</strong></p>
+                <p className="text-4xl"> <strong>Our Evolution</strong></p>
+              </div>
+              <p className="w-4/6 mt-8 text-md">Welcome to the Feedback Hub! Your insights are invaluable in sculpting an even better experience for you. Help us fine-tune our services by sharing your thoughts – together, we build excellence</p>
+            </div>
+            <a href="#" className="hero-button">Give Feedback</a>
+          </div>
+          <Image src={shape} alt="Shape Image" width={"50%"} />
+        </section>
       </main >
-      <footer>
+      <footer className="mt-10">
         <div className="flex w-screen !h-2/6 justify-evenly">
           <div className="w-3/12">
             <div>
@@ -184,7 +191,7 @@ export default function Home() {
             <i className="fa-brands fa-linkedin-in p-2"></i>
           </div>
         </div>
-        <p className="text-center">&copy; 2023 Rookie Techies. All rights reserved.</p>
+        <p className="text-center my-5">&copy; 2023 Rookie Techies. All rights reserved.</p>
       </footer>
     </div >
   )

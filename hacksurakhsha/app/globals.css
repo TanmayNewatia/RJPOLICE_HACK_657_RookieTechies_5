@@ -141,7 +141,6 @@ ul a {
 }
 
 .surf {
-  height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
@@ -150,11 +149,11 @@ ul a {
 
 .about,
 .recent {
-  height: 100vh;
   width: 100vw;
 }
 
-.hero-div {
+.hero-div,
+.shape-div {
   width: 40%;
   height: 40%;
   display: flex;
@@ -184,7 +183,6 @@ ul a {
 
 .services {
   background: #DFD3EB;
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,40 +196,6 @@ ul a {
 
 .menubtn {
   display: none;
-}
-
-@media screen and (max-width: 600px) {
-  .menubtn {
-    display: block;
-  }
-
-  header {
-    /* flex-direction: column; */
-    /* flex-wrap: wrap; */
-    align-content: space-between;
-    justify-content: center !important;
-  }
-
-  header>ul {
-    display: none !important;
-  }
-
-  header>ul.open {
-    position: absolute;
-    display: flex !important;
-    justify-content: flex-start !important;
-    width: 100vw !important;
-    height: 100vh;
-    top: 80px;
-    flex-direction: column;
-    background-color: white;
-  }
-
-  header>ul>li {
-    font-size: 18px;
-    margin: 10px 0;
-    padding: 5px;
-  }
 }
 
 .card {
@@ -248,7 +212,61 @@ ul a {
   border-radius: 20px;
 }
 
+.shape img {
+  width: 45% !important;
+}
+
+@media screen and (max-width: 600px) {
+  .menubtn {
+    display: block;
+  }
+
+  header {
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    align-content: space-between;
+    justify-content: center !important;
+    position: fixed;
+    top: 0;
+  }
+
+  header>ul {
+    display: none !important;
+  }
+
+  header>ul.open {
+    position: fixed;
+    display: flex !important;
+    justify-content: flex-start !important;
+    width: 100vw !important;
+    height: 100vh;
+    top: 80px;
+    flex-direction: column;
+    background-color: white;
+  }
+
+  header>ul>li {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 5px;
+  }
+}
+
 @media screen and (max-width: 800px) {
+  .shape img {
+    width: 90% !important;
+  }
+
+  html {
+    font-size: 16px !important;
+  }
+
+  .hero,
+  .shape {
+    width: 90vw !important;
+    margin: 0 auto;
+  }
+
   main {
     margin-top: 100px;
   }
@@ -261,13 +279,20 @@ ul a {
     flex-direction: column;
   }
 
-  .hero {
+  .hero,
+  .shape {
     flex-direction: column-reverse;
   }
 
   .surf-div,
-  .hero-div {
+  .hero-div,
+  .shape-div {
     width: 90%;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 90% !important;
     margin: 0 auto;
   }
 }
