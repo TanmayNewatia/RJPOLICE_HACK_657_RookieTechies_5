@@ -1,0 +1,99 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ .container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 0px 0px 10px 0px white;
+  text-align: center;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.43);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3.5px);
+-webkit-backdrop-filter: blur(3.5px);
+border: 1px solid rgba(255, 255, 255, 0.74);
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+position:relative;
+margin-left:55%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 0.5;
+}
+.btn {
+  width: 30%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #57007B;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius:5px;
+  float:center;
+  font-weight: bold;
+
+}
+.btn:hover {
+  transform:scale(1.3,1.3);
+    -webkit-transform:scale(1.3,1.3);
+    -moz-transform:scale(1.3,1.3);
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 70px;
+}
+
+html{
+  background-image: radial-gradient(#9D80C3,#57007B);
+  
+}
+
+label {
+  text-align: left;
+}
+.comment-label {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+#cancelform{
+  position: absolute !important;
+  left: 90% !important;
+  top: 20px !important;
+  height:25px !important;
+  width: 25px!important;
+}
+
+#bgimg{
+  background-image: url("file:///C:/Users/HP/Downloads/Untitled%20design%20(1)%201.svg"); 
+  background-color: none;
+
+}
