@@ -92,6 +92,14 @@ html {
   justify-content: flex-start;
 }
 
+.feedback-container form,
+.report-container form {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid white;
+  box-shadow: 0 0 2px 2px white;
+}
+
+
 header {
   background: #FFFFFF;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
@@ -110,6 +118,19 @@ header {
   color: white !important;
 }
 
+.feedback-container input:focus-visible,
+.report-container input:focus-visible,
+.feedback-container textarea:focus-visible,
+.report-container textarea:focus-visible {
+  outline: 0;
+}
+
+.feedback-container textarea,
+.report-container textarea {
+  resize: none !important;
+  padding: 10px;
+}
+
 .contact a {
   color: white !important;
 }
@@ -125,6 +146,7 @@ ul a {
 ::-webkit-scrollbar {
   width: 10px;
   background: linear-gradient(225deg, #A68AC8 0%, #57007B 100%);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -170,6 +192,26 @@ ul a {
   /* align-items: center; */
 }
 
+.surf form button {
+  background-color: #57007B;
+  color: white;
+  border-radius: 10px;
+}
+
+.surf form input {
+  border: 1px solid grey;
+}
+
+.surf form input:focus-visible {
+  outline: 0;
+  border: 2px solid #57007B;
+}
+
+.surf form {
+  padding: 10px;
+  margin: 10px;
+}
+
 .hero-button {
   display: flex;
   width: 50% !important;
@@ -188,6 +230,15 @@ ul a {
   align-items: center;
   flex-direction: column;
   padding: 50px 0;
+}
+
+.report-btn {
+  background-color: #57007B;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: 200px;
+  margin: 0 auto;
 }
 
 .card-body {
@@ -216,9 +267,72 @@ ul a {
   width: 45% !important;
 }
 
+.feedback-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.feedback-div {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+}
+
+.feedback-div>form>input,
+.report-div>form>input {
+  background-color: #57007B;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  width: 150px;
+}
+
+
+@media screen and (max-width: 400px) {
+  .surf .ReactModal__Content {
+    width: 100% !important;
+  }
+
+  .report-div form {
+    width: 100% !important;
+  }
+
+  .surf .ReactModal__Content button {
+    color: black !important;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .surf .ReactModal__Content {
+    width: 100% !important;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .surf .ReactModal__Content {
+    width: 90% !important;
+    max-width: 600px !important;
+  }
+
+  .report-div form {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .menubtn {
     display: block;
+  }
+
+  .recent-checked button {
+    display: none !important;
   }
 
   header {
@@ -294,5 +408,38 @@ ul a {
   .card {
     width: 90% !important;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+  .second-layer,
+  .third-layer {
+    flex-wrap: wrap;
+  }
+
+  .feedback-div form,
+  .feedback-div>div {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .surf .ReactModal__Content {
+    width: 75%;
+  }
+
+  .report-div img {
+    display: none !important;
+  }
+
+}
+
+@media screen and (max-width: 1250px) {
+
+  .second-layer,
+  .third-layer {
+    flex-wrap: wrap;
   }
 }

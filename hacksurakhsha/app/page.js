@@ -19,9 +19,68 @@ import google from "./images/google.svg";
 import surf from "./images/surf.svg";
 import services from "./images/services.svg";
 import shape from "./images/shape.svg";
+import Feedback from './components/feedback';
+import Modal from "react-modal";
+import ReactDOM from 'react-dom';
+import { IoIosCloseCircle } from "react-icons/io";
+import { FaQuestion } from "react-icons/fa";
+import Report from './components/report';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: "90%",
+    background: "linear-gradient(321deg, rgba(87,0,123,1) 0%, rgba(157,128,195,1) 100%)",
+    borderRadius: "30px",
+    height: "90%",
+    overflowY: "scroll",
+    overflowX: "hidden"
+  },
+};
+
+const customStyles2 = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: "50%",
+    background: "linear-gradient(321deg, rgba(87,0,123,1) 0%, rgba(157,128,195,1) 100%)",
+    borderRadius: "30px",
+    height: "70%",
+    overflow: "hidden",
+    minWidth: "380px",
+    maxWidth: "600px"
+  },
+};
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen2, setIsOpen2] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal2() {
+    setIsOpen2(true);
+  }
+
+  function closeModal2() {
+    setIsOpen2(false);
+  }
 
   const openMenu = () => {
     if (window.innerWidth <= 600) {
@@ -41,9 +100,9 @@ export default function Home() {
 
         <ul className={(open) ? "flex items-center nav justify-between open" : "flex items-center nav justify-between"}>
           <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#">Blog</a></li>
-          <li className="contact" onclick=""><a href="#">Contact Us</a></li>
+          <li className="contact" onClick=""><a href="#">Contact Us</a></li>
         </ul>
       </header>
       <main>
@@ -65,7 +124,7 @@ export default function Home() {
           </div>
           <Image src={hero} alt="Hero Image" width={"50%"} />
         </section>
-        <section className="services !w-screen my-10">
+        <section id="services" className="services !w-screen my-10">
           <h2 className="text-center text-3xl"><strong>Services we offer</strong></h2>
           <main className="flex flex-wrap gap-5 mx-auto justify-evenly items-center w-10/12 h-full !my-10">
             <div className="card">
@@ -111,13 +170,16 @@ export default function Home() {
             <p className="w-5/6 mt-8 text-md">The search bar swiftly verifies the security of the entered URLs,
               ensuring a safe browsing experience by
               checking for SSL encryption and trustworthiness.</p>
+            <form className="w-8/12 flex justify-center items-center">
+              <input type="text" placeholder='Paste the URL Here' style={{ padding: "10px", borderRadius: "10px" }} />
+              <button className="text-2xl p-3"><FaQuestion /></button>
+            </form>
+            <div>
+
+            </div>
           </div>
         </section>
-        <section className="recent">
-          <input type="text" />
-          <div>
-
-          </div>
+        <section className="recent flex flex-col">
           <div className="recent-checked flex flex-col justify-center items-center my-10">
             <p className="text-3xl text-center">Recently</p>
             <p className="text-3xl text-center"><strong>Verified Sites</strong></p>
@@ -149,6 +211,16 @@ export default function Home() {
               <CarouselNext />
             </Carousel>
           </div>
+          <button className="report-btn" onClick={openModal2}>Report a Website</button>
+          <Modal
+            isOpen={modalIsOpen2}
+            onRequestClose={closeModal2}
+            style={customStyles2}
+            contentLabel="ReportModal"
+          >
+            <button style={{ position: "fixed", left: "90%", top: "20px", fontSize: "30px", color: "white" }} onClick={closeModal2}><IoIosCloseCircle /></button>
+            <Report />
+          </Modal>
         </section>
         <section className="shape flex items-center justify-evenly gap-5 my-10">
           <div className="shape-div">
@@ -159,7 +231,16 @@ export default function Home() {
               </div>
               <p className="w-4/6 mt-8 text-md">Welcome to the Feedback Hub! Your insights are invaluable in sculpting an even better experience for you. Help us fine-tune our services by sharing your thoughts – together, we build excellence</p>
             </div>
-            <a href="#" className="hero-button">Give Feedback</a>
+            <a href className="hero-button" onClick={() => { openModal(); }}>Give Feedback</a>
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              style={customStyles}
+              contentLabel="FeedbackModal"
+            >
+              <button style={{ position: "fixed", left: "94%", top: "20px", fontSize: "30px", color: "white" }} onClick={closeModal}><IoIosCloseCircle /></button>
+              <Feedback />
+            </Modal>
           </div>
           <Image src={shape} alt="Shape Image" width={"50%"} />
         </section>
