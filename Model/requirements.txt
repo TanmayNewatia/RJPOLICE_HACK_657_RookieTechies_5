@@ -1,0 +1,7 @@
+flask
+pickle
+numpy
+re
+urllib.parse
+googlesearch
+random
