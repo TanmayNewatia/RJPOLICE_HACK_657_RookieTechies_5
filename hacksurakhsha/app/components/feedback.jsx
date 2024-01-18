@@ -9,6 +9,8 @@ import { useState } from "react";
 import StarRatings from 'react-star-ratings';
 import { supabase } from "../supabase";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Feedback() {
     const [rating, setRating] = useState(2);
@@ -22,9 +24,8 @@ export default function Feedback() {
         const service = document.getElementById("service").value;
         const email = document.getElementById("email").value;
         const company = document.getElementById("company").value;
-        const rating = document.getElementById("rating");
         const comments = document.getElementById("comments").value;
-        const { data, error } = await supabase
+        await supabase
             .from('FeedbackForm')
             .insert([
                 { name: name, occupation: occupation, service: service, email: email, company: company, rating: rating, comments: comments },
@@ -40,14 +41,14 @@ export default function Feedback() {
                     comments: comments
                 }, process.env.NEXT_PUBLIC_EMAIL_KEY)
                     .then(function (response) {
-                        
+                        console.log('SUCCESS!', response.status, response.text);
+                        toast("Feedback Submitted Successfully!");
                     }, function (error) {
                         console.log('FAILED...', error);
                     });
                 document.getElementById("myForm").reset();
             })
-            .then(error => {
-                console.log(error);
+            .then((error) => {
                 document.getElementById("myForm").reset();
             })
     }
@@ -124,6 +125,7 @@ export default function Feedback() {
                     <button type="button" onClick={() => { handleSubmit() }} >Submit</button>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     )
 }
