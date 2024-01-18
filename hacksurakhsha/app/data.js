@@ -36,9 +36,9 @@ const data = [
     { "organization": "HDFC Bank", "service": "Banking", "contact_number": "18002035235" },
     { "organization": "Bajaj Finserv", "service": "Financial Services", "contact_number": "1800222244" },
     { "organization": "TATA AIA Life Insurance", "service": "Insurance", "contact_number": "18002667766" },
-    { "organization": "Max Bupa Health Insurance", "service": "Insurance", "contact_number": "180000000000" },
+    { "organization": "Max Bupa Health Insurance", "service": "Insurance", "contact_number": "" },
     { "organization": "PNB Housing Finance Ltd", "service": "Financial Services", "contact_number": "18002001100" },
-    { "organization": "Vodafone Idea", "service": "Telecom", "contact_number": "199000000000" },
+    { "organization": "Vodafone Idea", "service": "Telecom", "contact_number": "1.99E+11" },
     { "organization": "Bharti Airtel", "service": "Telecom", "contact_number": "19100422222" },
     { "organization": "Reliance Retail Ltd", "service": "Retail", "contact_number": "8754338844" },
     { "organization": "DMart", "service": "Retail", "contact_number": "18002333444" },
@@ -56,13 +56,13 @@ const data = [
     { "organization": "Fullerton India Credit Co. Ltd.", "service": "Financial Services", "contact_number": "18002770787" },
     { "organization": "Shriram Finance Ltd", "service": "Financial Services", "contact_number": "18602580000" },
     { "organization": "PNB Metlife India Insurance Co. Ltd.", "service": "Insurance", "contact_number": "1800221221" },
-    { "organization": "Star Health and Allied Insurance Co Ltd", "service": "Insurance", "contact_number": "180000000000" },
+    { "organization": "Star Health and Allied Insurance Co Ltd", "service": "Insurance", "contact_number": "" },
     { "organization": "Reliance General Insurance Co. Ltd.", "service": "Insurance", "contact_number": "18003009" },
     { "organization": "LIC India", "service": "Insurance Corporation", "contact_number": "18002584455" },
     { "organization": "IndiGo", "service": "Airlines", "contact_number": "18001803838" },
     { "organization": "Air Asia", "service": "Airlines", "contact_number": "18605008000" },
     { "organization": "Amazon Pay", "service": "E-Wallet", "contact_number": "18002029831" },
-    { "organization": "Phonepe ()", "service": "E-Payment Wallet", "contact_number": "180000000000" },
+    { "organization": "Phonepe ()", "service": "E-Payment Wallet", "contact_number": "" },
     { "organization": "Cleartrip", "service": "Online Travel Services", "contact_number": "18002001800" },
     { "organization": "Yatra.com", "service": "Online Travel Services", "contact_number": "1800113800" },
     { "organization": "Spice Jet", "service": "Budget Airline", "contact_number": "18001803333" },
@@ -82,7 +82,7 @@ const data = [
     { "organization": "Policy Bazaar Insurance Web Aggregator", "service": "Insurance", "contact_number": "18005015726" },
     { "organization": "Wakefit Bedding Solutions", "service": "Furniture & Home Products", "contact_number": "8861002284" },
     { "organization": "Sleepyhead Mattresses", "service": "Mattresses & Furnishings", "contact_number": "8448444440" },
-    { "organization": "Featherlite Furniture", "service": "Office Furniture", "contact_number": "180000000000" },
+    { "organization": "Featherlite Furniture", "service": "Office Furniture", "contact_number": "" },
     { "organization": "Nilkamal Plastic Furniture", "service": "Plastic Furniture", "contact_number": "2221615731" },
     { "organization": "Homecentre Home Retail", "service": "Home Products Retail", "contact_number": "9560000000" },
     { "organization": "Max Fashion", "service": "Apparel Retail", "contact_number": "18605006235" },
@@ -92,13 +92,134 @@ const data = [
     { "organization": "1MG", "service": "Online Pharmacy Retailing", "contact_number": "9290000000" },
     { "organization": "Netmeds", "service": "Pharma Products Retailing", "contact_number": "9560000000" },
     { "organization": "Licious", "service": "Meat & Seafood Retailing", "contact_number": "8930000000" },
-    { "organization": "Big Basket", "service": "Grocery Delivery", "contact_number": "180000000000" },
+    { "organization": "Big Basket", "service": "Grocery Delivery", "contact_number": "" },
     { "organization": "Grofers", "service": "Grocery Retail", "contact_number": "9320000000" },
     { "organization": "Milk Basket", "service": "Milk Delivery Platform", "contact_number": "8040000000" },
-    { "organization": "Godrej Nature's Basket", "service": "Grocery Retailing", "contact_number": "18004192424" },
+    { "organization": "Godrej Nature's Basket", "service": "Grocery Retailing", "contact_number": "Upscale Grocery Shoppe Retailing" },
     { "organization": "Vegrow", "service": "AgriProducts Supply Chain Company", "contact_number": "4040747474" },
     { "organization": "Udaan", "service": "Online Wholesale Marketplace Platform", "contact_number": "18002029831" },
-    { "organization": "91mobiles", "service": "Tech Product Review Site", "contact_number": "9225592288" }
+    { "organization": "91mobiles", "service": "Tech Product Review Site", "contact_number": "Online Tech Product Reviews" },
+    { "organization": "More Retail Supermarket Chain", "service": "Supermarket", "contact_number": "2270000000" },
+    { "organization": "Star Bazaar Hypermarket Retail Chain", "service": "Supermarket", "contact_number": "18002000123" },
+    { "organization": "Reliance Smart Supermarket", "service": "Supermarket", "contact_number": "2240000000" },
+    { "organization": "Big Bazaar Hypermarket Chain", "service": "Hypermarket", "contact_number": "18002099898" },
+    { "organization": "Spencers Hyper Store", "service": "Hypermarket", "contact_number": "4450000000" },
+    { "organization": "Apollo 24 Hour Pharmacy", "service": "Pharmacy", "contact_number": "18605001066" },
+    {
+        "organization": "Guardian Pharmacy",
+        "service": "Pharmacy",
+        "contact_number": 2260000000
+    },
+    {
+        "organization": "Medplus Pharmacy Retail",
+        "service": "Pharmacy",
+        "contact_number": 4068146312
+    },
+    {
+        "organization": "99acres Property Classifieds",
+        "service": "Real Estate",
+        "contact_number": 1240000000
+    },
+    {
+        "organization": "Magicbricks Property Classifieds Platform",
+        "service": "Real Estate Broker",
+        "contact_number": 9650000000
+    },
+    {
+        "organization": "Housing.com Real Estate Listings Portal",
+        "service": "Real Estate Marketing",
+        "contact_number": 1210000000
+    },
+    {
+        "organization": "OYO Home Rental Aggregator Platform",
+        "service": "Home Rental",
+        "contact_number": 7303407703
+    },
+    {
+        "organization": "QuikrHome Rental Platform",
+        "service": "Rentals",
+        "contact_number": 9560000000
+    },
+    {
+        "organization": "NoBroker Rental Marketplace",
+        "service": "Rentals",
+        "contact_number": 7310000000
+    },
+    {
+        "organization": "CredR Certified Online Used Auto Marketplace",
+        "service": "Used Automobiles",
+        "contact_number": 8400000000
+    },
+    {
+        "organization": "Spinny Online Platform For Used Cars",
+        "service": "Used Cars",
+        "contact_number": 1.8e11
+    },
+    {
+        "organization": "Cardekho Online Auto Classifieds",
+        "service": "Auto Classifieds",
+        "contact_number": 9230000000
+    },
+    {
+        "organization": "Zoomcar Car Rentals",
+        "service": "Car Rentals",
+        "contact_number": 18001021050
+    },
+    {
+        "organization": "Revv Self Drive Car Rentals",
+        "service": "Car Rentals",
+        "contact_number": 8826363131
+    },
+    {
+        "organization": "Yaantra Appliance Repair Services",
+        "service": "Appliance Repair",
+        "contact_number": 18001025460
+    },
+    {
+        "organization": "Urban Clap Home Services Marketplace Platform",
+        "service": "Home Services",
+        "contact_number": 8880000000
+    },
+    {
+        "organization": "Jugnoo Auto Rickshaw Aggregator",
+        "service": "Transport Services",
+        "contact_number": 7290000000
+    },
+    {
+        "organization": "Porter Goods Shifting Services",
+        "service": "Logistics Services",
+        "contact_number": 9870000000
+    },
+    {
+        "organization": "Delhivery Logistics Services",
+        "service": "Logistics Company",
+        "contact_number": 9350000000
+    },
+    {
+        "organization": "Blue Dart Express Logistics Company",
+        "service": "Courier Company",
+        "contact_number": 1.8e11
+    },
+    {
+        "organization": "Women & Sr. Citizens/Garima Helpline",
+        "service": "Police",
+        "contact_number": "1090"
+    },
+    {
+        "organization": "Ambulance",
+        "service": "Police",
+        "contact_number": "102"
+    },
+    {
+        "organization": "Tele Manas Helpline Number",
+        "service": "Police",
+        "contact_number": "1800914416"
+    },
+    {
+        "organization": "Ambulance",
+        "service": "Police",
+        "contact_number": "102"
+    }
 ]
 
 export default data;
