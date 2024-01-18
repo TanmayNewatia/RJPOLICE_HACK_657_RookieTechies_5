@@ -29,6 +29,16 @@ import { supabase } from './supabase';
 import data from './data';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import img1 from "./images/img1.jpeg";
+import  img2  from "./images/img2.jpeg";
+import  img3 from "./images/img3.jpeg";
+import  img4 from "./images/img4.jpeg";
+import  img5 from "./images/img5.jpeg";
+import  img6 from "./images/img6.jpeg";
+import  img7 from "./images/img7.jpeg";
+import  img8 from "./images/img8.jpeg";
+import  img9 from "./images/img9.jpeg";
+import  img10 from "./images/img10.jpeg";
 
 const customStyles = {
   content: {
@@ -84,6 +94,7 @@ const customStyles3 = {
 };
 
 export default function Home() {
+  const val = [{ "0": img1, "1": img2, "2": img3, "3": img4, "4": img5, "5": img6, "6": img7, "7": img8, "8": img9, "9": img10 }]
   const [open, setOpen] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalIsOpen2, setIsOpen2] = React.useState(false);
@@ -323,6 +334,38 @@ export default function Home() {
             </Modal>
           </div>
           <Image src={shape} alt="Shape Image" width={"50%"} />
+        </section>
+        <section className="recent flex flex-col">
+          <div className="recent-checked flex flex-col justify-center items-center my-10">
+            {/* <p className="text-3xl text-center">Fun Awareness</p> */}
+            <p className="text-3xl text-center"><strong>Fun Awareness</strong></p>
+            <Carousel
+              opts={{
+                align: "start",
+              }}
+              className="flex justify-center w-10/12 h-8/12"
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                }),
+              ]}
+            >
+              <CarouselContent>
+                {Array.from({ length: 10 }).map((_, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="w-10/12 flex justify-center items-center">
+                      <CardContent className="flex flex-col aspect-square items-center justify-evenly p-6 w-11/12">
+                        <Image src={img1} className="card-img-top" alt="Verified" width={300} height={300} />
+
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
         </section>
       </main >
       <footer className="mt-10">
