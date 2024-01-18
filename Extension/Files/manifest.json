@@ -1,0 +1,14 @@
+{
+    "name": "Hacksurakhsha",
+    "version": "1.0.0",
+    "description": "Chrome Extension to classify url links to be safe or malicious",
+    "manifest_version": 3,
+    "author": "Hacksurakhsha",
+    "permissions": [
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Hacksurakhsha"
+    }
+}

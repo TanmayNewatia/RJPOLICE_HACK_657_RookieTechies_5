@@ -26,6 +26,9 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { FaQuestion } from "react-icons/fa";
 import Report from './components/report';
 import { supabase } from './supabase';
+import data from './data';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const customStyles = {
   content: {
@@ -62,11 +65,33 @@ const customStyles2 = {
   },
 };
 
+const customStyles3 = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    width: "50%",
+    background: "linear-gradient(321deg, rgba(87,0,123,1) 0%, rgba(157,128,195,1) 100%)",
+    borderRadius: "30px",
+    height: "70%",
+    overflow: "hidden",
+    minWidth: "380px",
+    maxWidth: "600px"
+  },
+};
+
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalIsOpen2, setIsOpen2] = React.useState(false);
-
+  const [modalIsOpen3, setIsOpen3] = React.useState(false);
+  const [org, setOrg] = React.useState("");
+  const [service, setService] = React.useState("");
+  const [contact, setContact] = React.useState("");
+  const [result, setResult] = useState(0);
   function openModal() {
     setIsOpen(true);
   }
@@ -83,9 +108,34 @@ export default function Home() {
     setIsOpen2(false);
   }
 
+  function openModal3() {
+    setIsOpen3(true);
+  }
+
+  function closeModal3() {
+    setIsOpen3(false);
+  }
+
   const openMenu = () => {
     if (window.innerWidth <= 600) {
       setOpen(!open);
+    }
+  }
+
+  const customerVerification = async () => {
+    let ele = document.getElementById("customercare").value;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]["contact_number"] == ele) {
+        setOrg(data[i]["organization"]);
+        setService(data[i]["service"]);
+        setContact(data[i]["contact_number"]);
+        setResult(1);
+        setIsOpen3(1);
+        break;
+      }
+    }
+    if (result == 0) {
+      toast("Customer Care Number is not verified!")
     }
   }
   return (
@@ -175,6 +225,35 @@ export default function Home() {
               <input type="text" placeholder='Paste the URL Here' style={{ padding: "10px", borderRadius: "10px" }} />
               <button className="text-2xl p-3"><FaQuestion /></button>
             </form>
+            <form className="w-8/12 flex justify-center items-center">
+              <input id="customercare" type="text" placeholder='Paste the Customer Care Number Here' style={{ padding: "10px", borderRadius: "10px" }} />
+              <p className="text-2xl p-3 cursor-pointer" onClick={() => { customerVerification() }} ><FaQuestion /></p>
+              <Modal
+                isOpen={modalIsOpen3}
+                onRequestClose={closeModal3}
+                style={customStyles3}
+                contentLabel="ResultModal"
+              >
+                <button style={{ position: "fixed", left: "94%", top: "20px", fontSize: "30px", color: "white" }} onClick={closeModal3}><IoIosCloseCircle /></button>
+                <div className='flex justify-evenly items-center w-full h-full flex-col'>
+                  <h3 class="text-2xl font-bold text-white">Customer Care Number is Verified!</h3>
+                  <div className="flex w-full justify-evenly">
+                    <h4 className="text-white font-semibold">Organization</h4>
+                    <h5 className="text-white font-semibold" id="org">{org}</h5>
+                  </div>
+                  <div className="flex w-full justify-evenly">
+                    <h4 className="text-white font-semibold">Service</h4>
+                    <h5 className="text-white font-semibold" id="service">{service}</h5>
+                  </div>
+                  <div className="flex w-full justify-evenly">
+                    <h4 className="text-white font-semibold">Contact Number</h4>
+                    <h5 className="text-white font-semibold" id="contact">{contact}</h5>
+                  </div>
+                </div>
+              </Modal>
+              <ToastContainer />
+            </form>
+
             <div>
 
             </div>
