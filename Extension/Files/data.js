@@ -98,7 +98,123 @@ const data = [
     { "organization": "Godrej Nature's Basket", "service": "Grocery Retailing", "contact_number": "18004192424" },
     { "organization": "Vegrow", "service": "AgriProducts Supply Chain Company", "contact_number": "4040747474" },
     { "organization": "Udaan", "service": "Online Wholesale Marketplace Platform", "contact_number": "18002029831" },
-    { "organization": "91mobiles", "service": "Tech Product Review Site", "contact_number": "9225592288" }
+    { "organization": "91mobiles", "service": "Tech Product Review Site", "contact_number": "9225592288" },
+    { "organization": "More Retail Supermarket Chain", "service": "Supermarket", "contact_number": "2270000000" },
+    { "organization": "Star Bazaar Hypermarket Retail Chain", "service": "Supermarket", "contact_number": "18002000123" },
+    { "organization": "Reliance Smart Supermarket", "service": "Supermarket", "contact_number": "2240000000" },
+    { "organization": "Big Bazaar Hypermarket Chain", "service": "Hypermarket", "contact_number": "18002099898" },
+    { "organization": "Spencers Hyper Store", "service": "Hypermarket", "contact_number": "4450000000" },
+    { "organization": "Apollo 24 Hour Pharmacy", "service": "Pharmacy", "contact_number": "18605001066" },
+    {
+        "organization": "Guardian Pharmacy",
+        "service": "Pharmacy",
+        "contact_number": 2260000000
+    },
+    {
+        "organization": "Medplus Pharmacy Retail",
+        "service": "Pharmacy",
+        "contact_number": 4068146312
+    },
+    {
+        "organization": "99acres Property Classifieds",
+        "service": "Real Estate",
+        "contact_number": 1240000000
+    },
+    {
+        "organization": "Magicbricks Property Classifieds Platform",
+        "service": "Real Estate Broker",
+        "contact_number": 9650000000
+    },
+    {
+        "organization": "Housing.com Real Estate Listings Portal",
+        "service": "Real Estate Marketing",
+        "contact_number": 1210000000
+    },
+    {
+        "organization": "OYO Home Rental Aggregator Platform",
+        "service": "Home Rental",
+        "contact_number": 7303407703
+    },
+    {
+        "organization": "QuikrHome Rental Platform",
+        "service": "Rentals",
+        "contact_number": 9560000000
+    },
+    {
+        "organization": "NoBroker Rental Marketplace",
+        "service": "Rentals",
+        "contact_number": 7310000000
+    },
+    {
+        "organization": "CredR Certified Online Used Auto Marketplace",
+        "service": "Used Automobiles",
+        "contact_number": 8400000000
+    },
+    {
+        "organization": "Spinny Online Platform For Used Cars",
+        "service": "Used Cars",
+        "contact_number": 1.8e11
+    },
+    {
+        "organization": "Cardekho Online Auto Classifieds",
+        "service": "Auto Classifieds",
+        "contact_number": 9230000000
+    },
+    {
+        "organization": "Zoomcar Car Rentals",
+        "service": "Car Rentals",
+        "contact_number": 18001021050
+    },
+    {
+        "organization": "Revv Self Drive Car Rentals",
+        "service": "Car Rentals",
+        "contact_number": 8826363131
+    },
+    {
+        "organization": "Yaantra Appliance Repair Services",
+        "service": "Appliance Repair",
+        "contact_number": 18001025460
+    },
+    {
+        "organization": "Urban Clap Home Services Marketplace Platform",
+        "service": "Home Services",
+        "contact_number": 8880000000
+    },
+    {
+        "organization": "Jugnoo Auto Rickshaw Aggregator",
+        "service": "Transport Services",
+        "contact_number": 7290000000
+    },
+    {
+        "organization": "Porter Goods Shifting Services",
+        "service": "Logistics Services",
+        "contact_number": 9870000000
+    },
+    {
+        "organization": "Delhivery Logistics Services",
+        "service": "Logistics Company",
+        "contact_number": 9350000000
+    },
+    {
+        "organization": "Blue Dart Express Logistics Company",
+        "service": "Courier Company",
+        "contact_number": 1.8e11
+    },
+    {
+        "organization": "Women & Sr. Citizens/Garima Helpline",
+        "service": "Police",
+        "contact_number": "1090"
+    },
+    {
+        "organization": "Ambulance",
+        "service": "Police",
+        "contact_number": "102"
+    },
+    {
+        "organization": "Tele Manas Helpline Number",
+        "service": "Police",
+        "contact_number": "1800914416"
+    }
 ]
 
 function init() {

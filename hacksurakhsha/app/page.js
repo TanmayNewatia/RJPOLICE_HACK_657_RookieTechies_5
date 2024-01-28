@@ -14,7 +14,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import verified from "./images/verified.svg";
-import { FaArrowRight, FaBars } from "react-icons/fa";
+import { FaArrowRight, FaBars, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import google from "./images/google.svg";
 import surf from "./images/surf.svg";
 import services from "./images/services.svg";
@@ -30,15 +30,15 @@ import data from './data';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import img1 from "./images/img1.jpeg";
-import  img2  from "./images/img2.jpeg";
-import  img3 from "./images/img3.jpeg";
-import  img4 from "./images/img4.jpeg";
-import  img5 from "./images/img5.jpeg";
-import  img6 from "./images/img6.jpeg";
-import  img7 from "./images/img7.jpeg";
-import  img8 from "./images/img8.jpeg";
-import  img9 from "./images/img9.jpeg";
-import  img10 from "./images/img10.jpeg";
+import img2 from "./images/img2.jpeg";
+import img3 from "./images/img3.jpeg";
+import img4 from "./images/img4.jpeg";
+import img5 from "./images/img5.jpeg";
+import img6 from "./images/img6.jpeg";
+import img7 from "./images/img7.jpeg";
+import img8 from "./images/img8.jpeg";
+import img9 from "./images/img9.jpeg";
+import img10 from "./images/img10.jpeg";
 
 const customStyles = {
   content: {
@@ -94,7 +94,7 @@ const customStyles3 = {
 };
 
 export default function Home() {
-  const val = [{ "0": img1, "1": img2, "2": img3, "3": img4, "4": img5, "5": img6, "6": img7, "7": img8, "8": img9, "9": img10 }]
+  const val = [{ "0": img1, "1": img2, "2": img3, "3": img4, "4": img5, "5": img6, "6": img7, "7": img8, "8": img9, "9": img10 }];
   const [open, setOpen] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [modalIsOpen2, setIsOpen2] = React.useState(false);
@@ -355,8 +355,7 @@ export default function Home() {
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="w-10/12 flex justify-center items-center">
                       <CardContent className="flex flex-col aspect-square items-center justify-evenly p-6 w-11/12">
-                        <Image src={img1} className="card-img-top" alt="Verified" width={300} height={300} />
-
+                        <Image src={val[0][`${index}`]} className="card-img-top" alt="Verified" width={300} height={300} />
                       </CardContent>
                     </Card>
                   </CarouselItem>
@@ -369,7 +368,7 @@ export default function Home() {
         </section>
       </main >
       <footer className="mt-10">
-        <div className="flex w-screen !h-2/6 justify-evenly">
+        <div className="flex w-screen !h-2/6 justify-evenly flex-wrap">
           <div className="w-3/12">
             <div>
               <Image src={logo} alt="RookieTechies" width={50} />
@@ -389,10 +388,10 @@ export default function Home() {
             Contact Us: 9887651230
           </p>
           <div className="!h-full flex items-end text-xl">
-            <i className="fa-brands fa-facebook p-2"></i>
-            <i className="fa-brands fa-instagram p-2"></i>
-            <i className="fa-brands fa-twitter p-2"></i>
-            <i className="fa-brands fa-linkedin-in p-2"></i>
+            <FaFacebook />
+            <FaInstagram />
+            <FaTwitter />
+            <FaLinkedin />
           </div>
         </div>
         <p className="text-center my-5">&copy; 2023 Rookie Techies. All rights reserved.</p>
